@@ -10,9 +10,18 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
     const itemColor = document.getElementById("item-color").value;
     const itemSize = document.getElementById("item-size").value;
     const itemMaterial = document.getElementById("item-material").value;
+    const itemQuality = document.getElementById("item-quality").value;
 
     // Verifica se os campos estão preenchidos corretamente
-    if (itemName === "" || itemQuantity === "" || itemQuantity <= 0 || itemValue === "" || itemColor === "" || itemSize === "" || itemMaterial === "") {
+    if (
+        itemName === "" || 
+        itemQuantity === "" || itemQuantity <= 0 || 
+        itemValue === "" || 
+        itemColor === "" || 
+        itemSize === "" || 
+        itemMaterial === "" || 
+        itemQuality === ""
+    ) {
         alert("Preencha todos os campos corretamente!");
         return;
     }
@@ -32,6 +41,7 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
         <td class="item-color">${itemColor}</td>
         <td class="item-size">${itemSize}</td>
         <td class="item-material">${itemMaterial}</td>
+        <td class="item-quality">${itemQuality}</td>
         <td>
             <input type="number" class="form-control sell-quantity" placeholder="Quantidade para vender" min="1">
         </td>
@@ -52,6 +62,7 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
     document.getElementById("item-color").value = "";
     document.getElementById("item-size").value = "";
     document.getElementById("item-material").value = "";
+    document.getElementById("item-quality").value = "";
 
     // Adiciona eventos de venda e adição para os novos itens
     addEventListenersToRow(newRow);
