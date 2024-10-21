@@ -3,12 +3,25 @@ let currentId = 0; // Variável global para manter o controle do último ID usad
 document.getElementById("item-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Pega o valor do nome e quantidade do item
+    // Pega o valor dos campos do formulário
     const itemName = document.getElementById("item-name").value;
     const itemQuantity = document.getElementById("item-quantity").value;
+    const itemValue = document.getElementById("item-value").value;
+    const itemColor = document.getElementById("item-color").value;
+    const itemSize = document.getElementById("item-size").value;
+    const itemMaterial = document.getElementById("item-material").value;
+    const itemQuality = document.getElementById("item-quality").value;
 
     // Verifica se os campos estão preenchidos corretamente
-    if (itemName === "" || itemQuantity === "" || itemQuantity <= 0) {
+    if (
+        itemName === "" || 
+        itemQuantity === "" || itemQuantity <= 0 || 
+        itemValue === "" || 
+        itemColor === "" || 
+        itemSize === "" || 
+        itemMaterial === "" || 
+        itemQuality === ""
+    ) {
         alert("Preencha todos os campos corretamente!");
         return;
     }
@@ -24,6 +37,11 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
         <td class="item-number">${currentId}</td> <!-- Número fixo da linha -->
         <td class="item-name">${itemName}</td>
         <td class="stock">${itemQuantity}</td>
+        <td class="item-value">${itemValue}</td>
+        <td class="item-color">${itemColor}</td>
+        <td class="item-size">${itemSize}</td>
+        <td class="item-material">${itemMaterial}</td>
+        <td class="item-quality">${itemQuality}</td>
         <td>
             <input type="number" class="form-control sell-quantity" placeholder="Quantidade para vender" min="1">
         </td>
@@ -40,6 +58,11 @@ document.getElementById("item-form").addEventListener("submit", function (e) {
     // Limpa os campos do formulário
     document.getElementById("item-name").value = "";
     document.getElementById("item-quantity").value = "";
+    document.getElementById("item-value").value = "";
+    document.getElementById("item-color").value = "";
+    document.getElementById("item-size").value = "";
+    document.getElementById("item-material").value = "";
+    document.getElementById("item-quality").value = "";
 
     // Adiciona eventos de venda e adição para os novos itens
     addEventListenersToRow(newRow);
