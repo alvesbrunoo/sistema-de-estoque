@@ -10,3 +10,20 @@ h1 {
 table {
     background-color: #fff;
 }
+
+header  a {
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgba(7, 156, 7, 0.63);
+    color: white;
+    transition-duration: .5s;
+}
+
+a:houver {
+    background-color: black;
+    text-shadow: 2px 2px 0px(0,0,0, 0.192);
+    text-decoration: none;
+    
+}
