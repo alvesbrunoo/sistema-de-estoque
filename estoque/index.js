@@ -3,6 +3,7 @@ function saveItem(event) {
     event.preventDefault();
 
     const itemName = document.getElementById("item-name").value;
+    const itemMarca = document.getElementById("item-marca").value;
     const itemQuantity = document.getElementById("item-quantity").value;
     const itemValue = document.getElementById("item-value").value;
     const itemColor = document.getElementById("item-color").value;
@@ -21,6 +22,7 @@ function saveItem(event) {
     const item = {
         id: nextId,
         name: itemName,
+        marca: itemMarca,
         quantity: parseInt(itemQuantity),
         value: itemValue,
         color: itemColor,
@@ -47,6 +49,7 @@ function loadInventory() {
         row.innerHTML = `
             <td>${item.id}</td>
             <td>${item.name}</td>
+            <td>${item.marca}</td>
             <td class="quantity">${item.quantity}</td>
             <td>${item.value}</td>
             <td>${item.color}</td>

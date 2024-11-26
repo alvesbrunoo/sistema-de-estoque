@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <title>Sistema de Estoque</title>
+    <title>Document</title><title>Sistema de Estoque</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <a href="index.html">Estoque</a>
-        <a href="valor.html">Valor</a>
-        <a href="material.html">Material</a>
-        <a href="qualidade.html">Qualidade</a>
-        <a href="cor.html">Cor</a>
-        <a href="tamanho.html">Tamanho</a>
-        <a href="quantidade.html">Quantidade</a>
+        <a href="oculos.html">Óculos</a>
+        <a href="ala.html">Ala</a>
+        <a href="vendas.html">Vendas</a>
     </header>
     <div class="container mt-5">
         <h1 class="text-center">Sistema de Estoque</h1>
 
+        <!-- Barra de pesquisa -->
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <input type="text" id="search-bar" class="form-control" placeholder="Pesquisar produto..." onkeyup="searchItem()">
+            </div>
+        </div>
 
         <!-- Botão para adicionar item -->
         <div class="text-center mt-4">
@@ -33,7 +35,9 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Valor</th>
+                            <th>ID</th>
+                            <th>Prateleira</th>
+                            <th>Seção</th>
                         </tr>
                     </thead>
                     <tbody id="inventory-table-body">
